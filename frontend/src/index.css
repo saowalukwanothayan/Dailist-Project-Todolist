@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+@theme {
+  /* Colors */
+  --color-dark-green: #2F6B3F;
+  --color-medium-green: #7FB77E;
+  --color-hover-green: #BEFFBD;
+  --color-bg-green: #E6FFCF;
+  --color-bg-content: #EFFFE1;
+  --color-bg-search: #BEFFBD;
+  --color-search: #ACACAC;
+  --color-text-all: #4E4E4E;
+  --color-info: #002CBC;
+  --color-star: #F7C85C;
+  --color-text-filter: #A5A5A5;
+  --color-taskcard: #FFF6C0;
+  --color-location: #FF0000;
+  --color-time: #96AFFF;
+  --color-bg-delete: #F5FFEC;
+
+
+
+  /* Font-Family */
+  --font-sans: "Google Sans Flex", ui-sans-serif, system-ui, sans-serif;
+  --font-Jockey: "Jockey One", sans-serif;
+  --font-Josefin: "Josefin Sans", sans-serif;
+}
