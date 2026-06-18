@@ -5,7 +5,7 @@ import axios from 'axios';
 
 let localMockDatabase = [...mockTasks];
 
-const BACKEND_URL = 'http://localhost:5000/api/tasks';
+const BACKEND_URL = 'https://dailist-backend.onrender.com/api/tasks';
 
 export const taskApi = {
 
