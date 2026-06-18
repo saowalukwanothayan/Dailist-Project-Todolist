@@ -12,16 +12,32 @@ export const isToday = (taskDateStr: string): boolean => {
   return taskDateStr === todayStr;
 };
 
+// export const isThisWeek = (taskDateStr: string): boolean => {
+//   const today = new Date();
+//   today.setHours(0,0,0,0);
+  
+//   const nextWeek = new Date();
+//   nextWeek.setDate(today.getDate() + 7);
+//   nextWeek.setHours(23,59,59,999);
+
+//   const taskDate = new Date(taskDateStr);
+//   return taskDate >= today && taskDate <= nextWeek;
+// };
 export const isThisWeek = (taskDateStr: string): boolean => {
   const today = new Date();
-  today.setHours(0,0,0,0);
   
-  const nextWeek = new Date();
-  nextWeek.setDate(today.getDate() + 7);
-  nextWeek.setHours(23,59,59,999);
+  const currentDay = today.getDay() === 0 ? 6 : today.getDay() - 1; 
+
+  const startOfWeek = new Date(today);
+  startOfWeek.setDate(today.getDate() - currentDay);
+  startOfWeek.setHours(0, 0, 0, 0);
+
+  const endOfWeek = new Date(startOfWeek);
+  endOfWeek.setDate(startOfWeek.getDate() + 6);
+  endOfWeek.setHours(23, 59, 59, 999);
 
   const taskDate = new Date(taskDateStr);
-  return taskDate >= today && taskDate <= nextWeek;
+  return taskDate >= startOfWeek && taskDate <= endOfWeek;
 };
 
 export const isThisMonth = (taskDateStr: string): boolean => {
