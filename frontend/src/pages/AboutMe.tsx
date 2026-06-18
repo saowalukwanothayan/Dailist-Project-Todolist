@@ -1,4 +1,4 @@
-import myImage from '../assets/image/myimage.jpg'
+import myimage from '../assets/image/myimage.jpg'
 import react from '../assets/image/react.png'
 import vite from '../assets/image/vite.png'
 import ts from '../assets/image/ts.png'
@@ -34,7 +34,7 @@ export default function AboutMe() {
                     <div className='flex justify-center'>
                         <img
                             className='w-38 h-38 object-cover rounded-full'
-                            src={myImage}
+                            src={myimage}
                             title='Saowaluk Wanothayan'
                         />
                     </div>
