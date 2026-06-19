@@ -84,7 +84,7 @@ export default function AboutMe() {
                             <div>:</div>
                             <div>
                                 <a
-                                    href="https://www.linkedin.com/in/your-linkedin-id"
+                                    href="https://www.linkedin.com/in/saowaluk-wanothayan-064b90379"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="transition hover:text-green-700 hover:underline"
