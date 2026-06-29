@@ -25,9 +25,6 @@ export default function TaskCard({
 
     const { toggleComplete } = useTaskStore()
 
-
-    console.log('startTime:', task.startTime, 'endTime:', task.endTime);
-    
     return (
 
     <div className="h-42" >
