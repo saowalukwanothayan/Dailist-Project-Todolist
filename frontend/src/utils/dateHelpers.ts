@@ -12,17 +12,6 @@ export const isToday = (taskDateStr: string): boolean => {
   return taskDateStr === todayStr;
 };
 
-// export const isThisWeek = (taskDateStr: string): boolean => {
-//   const today = new Date();
-//   today.setHours(0,0,0,0);
-  
-//   const nextWeek = new Date();
-//   nextWeek.setDate(today.getDate() + 7);
-//   nextWeek.setHours(23,59,59,999);
-
-//   const taskDate = new Date(taskDateStr);
-//   return taskDate >= today && taskDate <= nextWeek;
-// };
 export const isThisWeek = (taskDateStr: string): boolean => {
   const today = new Date();
   

@@ -5,11 +5,12 @@ import type { Task } from '../types/types'
 type TaskStore = {
   tasks: Task[];
   isLoading: boolean;
-  errorMessage: string | null;
-  clearError: () => void; 
+  errorMessage: string | null; 
   
   selectedTask: Task | null;
   isDetailOpen: boolean;
+
+  clearError: () => void;
 
   openDetail: (task: Task) => void;
   closeDetail: () => void;
@@ -36,15 +37,14 @@ export const useTaskStore = create<TaskStore>((set, get) => ({
   tasks: [],
   isLoading: false,
   errorMessage: null,
-  clearError: () => set({ errorMessage: null }),
 
   selectedTask: null,
   isDetailOpen: false,
 
+  clearError: () => set({ errorMessage: null }),
+
   openDetail: (task) => set({ selectedTask: task, isDetailOpen: true }),
-
   closeDetail: () => set({ selectedTask: null, isDetailOpen: false }),
-
 
 fetchTasks: async () => {
   set({ isLoading: true, errorMessage: null });
@@ -128,7 +128,6 @@ fetchTasks: async () => {
     }
   },
   
- 
   toggleImportant: async (id) => {
     const currentTask = get().tasks.find((t) => t.id === id);
     if (!currentTask) return;
@@ -161,8 +160,7 @@ fetchTasks: async () => {
       set((state) => ({
         tasks: state.tasks.filter((task) => task.id !== id)
       }));
-
-      // 💡 เพิ่มเติม: ถ้างานที่กำลังเปิดดู (Selected) คือตัวที่โดนลบ ให้สั่งปิดหน้าต่าง/เคลียร์ค่าทิ้งด้วย
+      
       const currentSelected = get().selectedTask;
       if (currentSelected && currentSelected.id === id) {
         set({ selectedTask: null, isDetailOpen: false });

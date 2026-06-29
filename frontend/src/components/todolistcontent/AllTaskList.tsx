@@ -96,9 +96,7 @@ export default function AllTaskList() {
                   scrollDirection="vertical"
                   onSeeMore={handleSeeMore}
                 >
-                  {/* ส่วนนี้คือ children ที่จะถูกส่งเข้าไปแทรกข้างๆ Title */}
                     <div className="flex items-center gap-1">
-                      {/* Input ปฏิทิน */}
                       <div 
                         onClick={() => inputRef.current?.showPicker()}
                         className="relative flex items-center border-2 border-medium-green rounded-lg px-2 py-0.5 gap-2 bg-white cursor-pointer"

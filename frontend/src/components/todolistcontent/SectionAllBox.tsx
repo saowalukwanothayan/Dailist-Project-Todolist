@@ -12,7 +12,7 @@ import { formatDate } from "../../utils/dateTime"
 
 import { IoArrowBackCircle } from "react-icons/io5";
 import { IoIosStar } from "react-icons/io";
-import { FaCircle } from "react-icons/fa";
+import { FaCircle } from "react-icons/fa";   
 import { FaRegCheckCircle } from "react-icons/fa";
 
 
@@ -30,7 +30,7 @@ export const SectionAllBox = () => {
 
   let displayTitle = "";
   let displayIcon: React.ReactNode = null;
-  let currentBoxTasks = tasks; // 💡 ในอนาคตเปลี่ยนเป็นข้อมูลจริงตามเซกชันนั้นๆ
+  let currentBoxTasks = tasks;
 
   switch (section?.toLowerCase()) {
     case "todaytask":
