@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import pool from '../config/db.js';
 
-// 1. ดึงข้อมูลงานทั้งหมด
 export const getTasks = async (req: Request, res: Response) => {
   try {
     const result = await pool.query(`
@@ -25,7 +24,6 @@ export const getTasks = async (req: Request, res: Response) => {
   }
 };
 
-// 2. สร้างงานใหม่
 export const createTask = async (req: Request, res: Response) => {
   const { title, date, startTime, endTime, location, description, important, completed } = req.body;
 
@@ -52,9 +50,8 @@ export const createTask = async (req: Request, res: Response) => {
   }
 };
 
-// 3. แก้ไขข้อมูลงาน (Update Task)
 export const updateTask = async (req: Request, res: Response) => {
-  const { id } = req.params; // รับ UUID จาก URL
+  const { id } = req.params;
   const { title, date, startTime, endTime, location, description } = req.body;
 
   try {
@@ -90,7 +87,6 @@ export const updateTask = async (req: Request, res: Response) => {
   }
 };
 
-// 4. สลับสถานะเสร็จงาน (Toggle Complete)
 export const toggleComplete = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
@@ -112,7 +108,6 @@ export const toggleComplete = async (req: Request, res: Response) => {
   }
 };
 
-// 5. สลับสถานะติดดาว (Toggle Important)
 export const toggleImportant = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
@@ -134,7 +129,6 @@ export const toggleImportant = async (req: Request, res: Response) => {
   }
 };
 
-// 6. ลบงาน (Delete Task)
 export const deleteTask = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
