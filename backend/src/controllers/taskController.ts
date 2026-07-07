@@ -5,7 +5,7 @@ export const getTasks = async (req: Request, res: Response) => {
   try {
     const result = await pool.query(`
       SELECT 
-        task_id AS id, 
+        id, 
         title, 
         TO_CHAR(task_date, 'YYYY-MM-DD') AS date, 
         start_time AS "startTime", 
@@ -32,7 +32,7 @@ export const createTask = async (req: Request, res: Response) => {
       INSERT INTO tasks (title, task_date, start_time, end_time, location, description, is_important, is_completed)
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
       RETURNING 
-        task_id AS id, 
+        id, 
         title, 
         TO_CHAR(task_date, 'YYYY-MM-DD') AS date, 
         start_time AS "startTime", 
@@ -64,9 +64,9 @@ export const updateTask = async (req: Request, res: Response) => {
         end_time = COALESCE($4, end_time),
         location = COALESCE($5, location),
         description = COALESCE($6, description)
-      WHERE task_id = $7
+      WHERE id = $7
       RETURNING 
-        task_id AS id,
+        id,
         title,
         TO_CHAR(task_date, 'YYYY-MM-DD') AS date, 
         start_time AS "startTime",
@@ -93,7 +93,7 @@ export const toggleComplete = async (req: Request, res: Response) => {
     const result = await pool.query(`
       UPDATE tasks 
       SET is_completed = NOT is_completed 
-      WHERE task_id = $1
+      WHERE id = $1
       RETURNING is_completed AS completed
     `, [id]);
 
@@ -114,7 +114,7 @@ export const toggleImportant = async (req: Request, res: Response) => {
     const result = await pool.query(`
       UPDATE tasks 
       SET is_important = NOT is_important 
-      WHERE task_id = $1
+      WHERE id = $1
       RETURNING is_important AS important
     `, [id]);
 
@@ -132,7 +132,7 @@ export const toggleImportant = async (req: Request, res: Response) => {
 export const deleteTask = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
-    const result = await pool.query('DELETE FROM tasks WHERE task_id = $1', [id]);
+    const result = await pool.query('DELETE FROM tasks WHERE id = $1', [id]);
 
     if (result.rowCount === 0) {
       return res.status(404).json({ error: 'Task not found' });
