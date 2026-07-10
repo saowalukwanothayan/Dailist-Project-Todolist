@@ -1,5 +1,6 @@
 import type { Task } from "../../types/types";
 import OptionButton from "../ui/OptionButton";
+import { truncateText } from '../../utils/string';
 import { useTaskStore } from "../../store/taskStore";
 
 type DataTaskItemProp = {
@@ -25,7 +26,7 @@ const DataTaskItem = ({ task  }: DataTaskItemProp) => {
             />
             <span className={`text-[16px] flex-1 font-medium shrink-0
                 ${task.completed ? "line-through text-gray-400" : "text-text-all"}`}>
-                {task.title}
+                {truncateText(task.title, 25)}
             </span>
             <>
                 <OptionButton 

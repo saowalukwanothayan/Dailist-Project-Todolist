@@ -8,6 +8,7 @@ import OptionButton from "./OptionButton";
 
 import type { Task } from "../../types/types"
 import { formatDate , formatTime } from "../../utils/dateTime"
+import { truncateText } from '../../utils/string';
 import { useTaskStore } from "../../store/taskStore";
 
 
@@ -48,7 +49,7 @@ export default function TaskCard({
                             />
                             <h2 className= {`ml-3 min-w-60 shrink-0 text-[18px] font-semibold
                                 ${task.completed ? 'line-through text-gray-500' : ''}`}>
-                                {task.title}
+                                {truncateText(task.title, 25)}
                             </h2>
                         </div>
                         <div className="flex items-center gap-2.5">

@@ -87,6 +87,7 @@ export default function TaskForm({
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
                                 placeholder="Enter task name"
+                                maxLength={25}
                                 className="w-full border-3 border-medium-green
                                 rounded-lg px-3 py-2 text-text-all cursor-pointer"
                             />

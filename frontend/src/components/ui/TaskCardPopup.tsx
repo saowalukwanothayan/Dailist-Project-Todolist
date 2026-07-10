@@ -5,6 +5,7 @@ import { FaRegClock } from "react-icons/fa6";
 import { ImportantBt } from "./ImportantBt"
 import type { Task } from "../../types/types"
 import { formatDate , formatTime } from "../../utils/dateTime"
+import { truncateText } from '../../utils/string';
 import { useTaskStore } from "../../store/taskStore";
 
 
@@ -52,7 +53,7 @@ const TaskCardPopup = ({ task, onClose }: TaskCardPopup) => {
                                 />    
                                 <h2 className= {`min-w-60 shrink-0 text-[22px] font-bold 
                                     ${task.completed ? 'line-through text-gray-500' : ''}`}>
-                                    {task.title}
+                                    {truncateText(task.title, 25)}
                                 </h2>
                             </div>
                                 <ImportantBt task={task} />
