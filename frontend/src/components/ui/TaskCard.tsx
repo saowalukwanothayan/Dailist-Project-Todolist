@@ -47,7 +47,7 @@ export default function TaskCard({
                                     cursor-pointer
                                     accent-white"
                             />
-                            <h2 className= {`ml-3 min-w-60 shrink-0 text-[18px] font-semibold
+                            <h2 className= {`ml-3 min-w-40 shrink-0 text-[18px] font-semibold truncate
                                 ${task.completed ? 'line-through text-gray-500' : ''}`}>
                                 {truncateText(task.title, 25)}
                             </h2>

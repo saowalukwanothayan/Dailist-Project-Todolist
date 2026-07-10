@@ -51,7 +51,7 @@ const TaskCardPopup = ({ task, onClose }: TaskCardPopup) => {
                                     cursor-default 
                                     accent-white"
                                 />    
-                                <h2 className= {`min-w-60 shrink-0 text-[22px] font-bold 
+                                <h2 className= {`min-w-40 shrink-0 text-[20px] font-bold truncate
                                     ${task.completed ? 'line-through text-gray-500' : ''}`}>
                                     {truncateText(task.title, 25)}
                                 </h2>

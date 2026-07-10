@@ -24,7 +24,7 @@ const DataTaskItem = ({ task  }: DataTaskItemProp) => {
                     cursor-pointer 
                     accent-white"
             />
-            <span className={`text-[16px] flex-1 font-medium shrink-0
+            <span className={`text-[16px] flex-1 font-medium min-w-0 truncate shrink-0
                 ${task.completed ? "line-through text-gray-400" : "text-text-all"}`}>
                 {truncateText(task.title, 25)}
             </span>
